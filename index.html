@@ -42,7 +42,7 @@
 </head>
 <body>
     <div class="container">
-        <img src="https://drive.google.com/uc?export=view&id=1hK37dHHUOL0kj1hvoVKJZ50Ss3kUpmgO" alt="Special image" class="main-image">
+        <img src="https://drive.google.com/uc?export=download&id=1hK37dHHUOL0kj1hvoVKJZ50Ss3kUpmgO" alt="Special image" class="main-image">
         
         <div class="message">Your special message here!</div>
         
@@ -52,7 +52,7 @@
     </div>
 
     <audio id="bgMusic" loop>
-        <source src="https://drive.google.com/uc?export=view&id=1BrjNUp4sVmxwqQAuZ0TYmagRf0itFCSp" type="audio/mpeg">
+        <source src="https://drive.google.com/uc?export=download&id=1BrjNUp4sVmxwqQAuZ0TYmagRf0itFCSp" type="audio/mpeg">
         Your browser does not support the audio element.
     </audio>
 
@@ -61,8 +61,6 @@
         window.addEventListener('DOMContentLoaded', () => {
             const audio = document.getElementById('bgMusic');
             
-            // Modern browsers require user interaction to play audio
-            // Adding a click event to the entire document
             document.body.addEventListener('click', () => {
                 if (audio.paused) {
                     audio.play();
@@ -70,16 +68,13 @@
                     audio.pause();
                 }
             });
-            
-            // Try to autoplay (will work on some browsers/devices)
-            // This is a fallback attempt, but most browsers will block it
+
             try {
                 audio.play().catch(e => {
-                    // Silently catch the error - this is expected behavior
                     console.log("Auto-play blocked. User needs to interact with the page first.");
                 });
             } catch(e) {
-                // Fallback for older browsers
+                // Fallback
             }
         });
     </script>
